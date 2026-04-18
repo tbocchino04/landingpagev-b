@@ -13,7 +13,7 @@ export function CTAFinal() {
           </RevealItem>
           <RevealItem>
             <h2 className="font-serif text-[clamp(30px,4.5vw,52px)] text-secondary-foreground leading-[1.1] mb-5 font-bold">
-              Tu próxima obra eléctrica<br />hecha <em className="text-primary not-italic">bien desde el proyecto.</em>
+              Tu próxima obra eléctrica<br />hecha <em className="text-primary not-italic primary-glow">bien desde el proyecto.</em>
             </h2>
           </RevealItem>
           <RevealItem>

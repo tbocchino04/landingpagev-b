@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 @import 'tailwindcss';
 @import 'tw-animate-css';
@@ -6,43 +6,45 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 0 0% 8%;
+  /* Dark premium base */
+  --background: 0 0% 6%;
+  --foreground: 0 0% 93%;
 
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 8%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 93%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 8%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 93%;
 
-  --primary: 262 100% 18%;
-  --primary-foreground: 0 0% 100%;
+  /* Bright lavender — visible and luminous on dark */
+  --primary: 262 75% 68%;
+  --primary-foreground: 0 0% 6%;
 
-  --secondary: 0 0% 0%;
-  --secondary-foreground: 0 0% 100%;
+  --secondary: 0 0% 4%;
+  --secondary-foreground: 0 0% 93%;
 
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 35%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 58%;
 
-  --accent: 262 20% 95%;
-  --accent-foreground: 262 100% 18%;
+  --accent: 262 30% 18%;
+  --accent-foreground: 262 75% 68%;
 
-  --destructive: 5 73% 41%;
+  --destructive: 5 73% 55%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 262 100% 18%;
+  --border: 0 0% 14%;
+  --input: 0 0% 14%;
+  --ring: 262 75% 68%;
 
   --radius: 0px;
 
-  --gold: 262 100% 18%;
-  --gold-light: 262 80% 30%;
-  --gold-pale: 262 20% 93%;
-  --ink: 0 0% 8%;
-  --ink-soft: 0 0% 12%;
-  --ink-muted: 0 0% 40%;
-  --slate: 0 0% 54%;
+  --gold: 262 75% 68%;
+  --gold-light: 262 75% 78%;
+  --gold-pale: 262 25% 16%;
+  --ink: 0 0% 6%;
+  --ink-soft: 0 0% 10%;
+  --ink-muted: 0 0% 58%;
+  --slate: 0 0% 55%;
 }
 
 @theme inline {
@@ -133,5 +135,13 @@
   .input-field {
     @apply w-full bg-secondary-foreground/[0.08] border border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/35 px-3.5 py-3 text-sm transition-colors;
     @apply focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary;
+  }
+
+  /* Luminous glow on primary-colored accent text */
+  .primary-glow {
+    text-shadow:
+      0 0 20px rgba(180, 130, 255, 0.7),
+      0 0 50px rgba(180, 130, 255, 0.3),
+      0 0 80px rgba(180, 130, 255, 0.1);
   }
 }

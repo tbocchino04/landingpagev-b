@@ -22,7 +22,7 @@ export function Hero() {
         <RevealItem>
           <h1 className="font-serif text-[clamp(36px,5.5vw,72px)] text-secondary-foreground leading-[1.08] font-bold max-w-[780px] mb-7">
             La instalación eléctrica que<br />
-            <em className="text-primary not-italic">no va a frenar</em><br />
+            <em className="text-primary not-italic primary-glow">no va a frenar</em><br />
             tu obra.
           </h1>
         </RevealItem>
