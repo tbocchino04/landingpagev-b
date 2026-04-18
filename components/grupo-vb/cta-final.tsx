@@ -1,38 +1,43 @@
 "use client"
 
+import { SectionReveal, RevealItem } from "@/components/motion/Reveal"
+import { ContactForm } from "@/components/grupo-vb/contact-form"
+
 export function CTAFinal() {
   return (
-    <section className="bg-ink py-[100px] px-[5%] text-center">
-      <div className="flex items-center gap-2 mb-4 justify-center">
-        <span className="block w-6 h-px bg-gold" />
-        <span className="text-[10px] font-semibold tracking-[0.18em] uppercase text-gold">
-          ¿Empezamos?
-        </span>
-        <span className="block w-6 h-px bg-gold" />
+    <section id="contacto-final" className="bg-ink py-[100px] px-[5%]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center max-w-[1100px] mx-auto">
+        <SectionReveal>
+          <RevealItem>
+            <div className="section-tag">¿Empezamos?</div>
+          </RevealItem>
+          <RevealItem>
+            <h2 className="font-serif text-[clamp(30px,4.5vw,52px)] text-secondary-foreground leading-[1.1] mb-5 font-bold">
+              Tu próxima obra eléctrica<br />hecha <em className="text-primary not-italic">bien desde el proyecto.</em>
+            </h2>
+          </RevealItem>
+          <RevealItem>
+            <p className="text-base text-secondary-foreground/[0.55] mb-6 font-light leading-[1.7] max-w-[480px]">
+              Contanos el proyecto, la ubicación y la etapa en la que está. Respondemos en menos de 24 horas hábiles.
+            </p>
+          </RevealItem>
+          <RevealItem>
+            <ul className="space-y-2.5 text-[13px] text-secondary-foreground/60">
+              <li className="flex gap-2.5 items-center"><span className="w-1.5 h-1.5 bg-primary block" /> Visita técnica sin cargo en CABA y GBA Norte</li>
+              <li className="flex gap-2.5 items-center"><span className="w-1.5 h-1.5 bg-primary block" /> Presupuesto detallado en 48 a 72hs hábiles</li>
+              <li className="flex gap-2.5 items-center"><span className="w-1.5 h-1.5 bg-primary block" /> Sin compromiso ni costo de cotización</li>
+            </ul>
+          </RevealItem>
+        </SectionReveal>
+        <SectionReveal>
+          <RevealItem>
+            <div className="bg-secondary-foreground/[0.04] border border-secondary-foreground/10 p-8">
+              <div className="text-[10px] tracking-[0.18em] uppercase text-primary mb-5">Formulario de contacto</div>
+              <ContactForm />
+            </div>
+          </RevealItem>
+        </SectionReveal>
       </div>
-      
-      <h2 className="font-serif text-[clamp(30px,4.5vw,56px)] text-white leading-[1.1] mb-5 font-bold">
-        Tu próxima obra eléctrica
-        <br />
-        hecha <em className="text-gold not-italic">bien desde el inicio.</em>
-      </h2>
-      
-      <p className="text-base text-white/55 mb-10 font-light leading-relaxed max-w-[540px] mx-auto">
-        Respondemos en menos de 24 horas hábiles. Contanos el proyecto, la ubicación y la etapa en la que está. El resto lo vemos juntos.
-      </p>
-      
-      <div className="flex gap-3.5 justify-center flex-wrap">
-        <button className="bg-gold text-ink font-sans text-[15px] font-semibold px-10 py-[18px] border-none cursor-pointer tracking-[0.06em] uppercase hover:bg-gold-light transition-colors">
-          Solicitar presupuesto
-        </button>
-        <button className="bg-transparent text-white font-sans text-[15px] font-medium px-7 py-[18px] border border-white/25 cursor-pointer tracking-[0.04em] hover:border-white/50 transition-colors">
-          Escribir por WhatsApp
-        </button>
-      </div>
-      
-      <p className="mt-6 text-xs text-white/30 tracking-[0.04em]">
-        Sin compromiso · Respondemos en 24hs · CABA y Zona Norte del GBA
-      </p>
     </section>
   )
 }

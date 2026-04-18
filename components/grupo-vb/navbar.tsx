@@ -1,14 +1,20 @@
 "use client"
 
+import Image from "next/image"
+
 export function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-ink/[0.97] px-[5%] h-[60px] flex items-center justify-between border-b border-gold/30">
-      <div className="font-serif text-lg text-white tracking-[0.04em]">
-        GRUPO <span className="text-gold">V&B</span>
+    <nav className="fixed top-0 left-0 right-0 z-[100] bg-secondary/[0.97] px-[5%] h-16 flex items-center justify-between border-b border-primary/20">
+      <div className="flex h-16 items-center justify-center">
+        <Image
+          src="/logo-vb-clean.png"
+          alt="VB Soluciones Eléctricas"
+          width={120}
+          height={32}
+          className="block h-8 w-auto object-contain translate-y-[1px]"
+        />
       </div>
-      <button className="bg-gold text-ink font-sans text-[13px] font-semibold px-[18px] py-2 border-none cursor-pointer tracking-[0.05em] uppercase hover:bg-gold-light transition-colors">
-        Solicitar presupuesto
-      </button>
+      <button className="btn-primary text-[13px] px-[18px] py-2 flex-shrink-0">Solicitar presupuesto</button>
     </nav>
   )
 }

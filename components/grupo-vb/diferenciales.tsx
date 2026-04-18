@@ -1,63 +1,55 @@
 "use client"
 
-const comparaciones = [
-  { bad: "Trabaja sin plano", good: "Planimetría antes de ejecutar" },
-  { bad: "Sin documentación", good: "Legajo técnico completo" },
-  { bad: "Disponibilidad variable", good: "Cronograma y equipo dedicado" },
-  { bad: "Habilitación tercerizada", good: "Matrícula profesional propia" },
-  { bad: "Comunicación informal", good: "Reporte estructurado de avance" },
-  { bad: "Sin interlocutor claro", good: "Un responsable por proyecto" },
+import { SectionReveal, RevealItem } from "@/components/motion/Reveal"
+
+const rows = [
+  ["Trabaja sin plano coordinado", "Compatibiliza planimetría antes de ejecutar"],
+  ["Sin documentación técnica", "Legajo completo con planos as-built"],
+  ["Disponibilidad variable", "Cronograma comprometido y equipo dedicado"],
+  ["Habilitación tercerizada", "Matrícula profesional propia"],
+  ["Comunicación informal", "Reporte estructurado a la dirección de obra"],
+  ["Sin interlocutor claro", "Un responsable técnico por proyecto"],
 ]
 
 export function Diferenciales() {
   return (
     <section className="py-20 px-[5%] bg-ink">
-      <div className="grid grid-cols-2 gap-16 items-start max-md:grid-cols-1 max-md:gap-9">
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="block w-6 h-px bg-gold" />
-            <span className="text-[10px] font-semibold tracking-[0.18em] uppercase text-gold">
-              Por qué elegirnos
-            </span>
-          </div>
-          
-          <h2 className="font-serif text-[clamp(26px,3.5vw,42px)] text-white leading-[1.15] mb-4 font-bold">
-            Grupo V&B versus el mercado informal.
-          </h2>
-          
-          <p className="mt-4 text-sm text-white/50 leading-relaxed font-light">
-            No competimos en precio con quienes no documentan, no planifican y no responden cuando algo falla. Competimos en resultado.
-          </p>
-        </div>
-        
-        <div>
-          <div className="w-full">
-            <div className="grid grid-cols-2 border-b border-white/[0.07] border-t">
-              <div className="text-[10px] tracking-[0.14em] uppercase text-slate font-semibold pb-2.5 p-3.5 px-4">
-                Electricista común
-              </div>
-              <div className="text-[10px] tracking-[0.14em] uppercase text-gold font-semibold pb-2.5 p-3.5 px-4">
-                Grupo V&B
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-16 items-start">
+        <SectionReveal>
+          <RevealItem>
+            <div className="section-tag">Por qué elegirnos</div>
+          </RevealItem>
+          <RevealItem>
+            <h2 className="font-serif text-[clamp(26px,3.5vw,42px)] text-secondary-foreground leading-[1.15] mb-4 font-bold">
+              VB Soluciones Eléctricas versus el mercado informal.
+            </h2>
+          </RevealItem>
+          <RevealItem>
+            <p className="mt-4 text-sm text-secondary-foreground/50 leading-[1.7] font-light">
+              No competimos en precio con quienes no documentan, no planifican y no responden cuando algo falla. Competimos en resultado y en coordinación.
+            </p>
+          </RevealItem>
+        </SectionReveal>
+        <SectionReveal className="w-full">
+          <RevealItem>
+            <div className="grid grid-cols-2 border-b border-secondary-foreground/[0.07] border-t">
+              <div className="text-[10px] tracking-[0.14em] uppercase text-slate font-semibold pb-2.5 p-3.5">Contratista común</div>
+              <div className="text-[10px] tracking-[0.14em] uppercase text-primary font-semibold pb-2.5 p-3.5">VB Soluciones Eléctricas</div>
             </div>
-            
-            {comparaciones.map((item, index) => (
-              <div
-                key={item.bad}
-                className={`grid grid-cols-2 ${index < comparaciones.length - 1 ? 'border-b border-white/[0.07]' : ''}`}
-              >
-                <div className="p-3.5 px-4 text-[13px] text-white/35">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-white/20 mr-2 align-middle" />
-                  {item.bad}
+          </RevealItem>
+          {rows.map((r, i) => (
+            <RevealItem key={i}>
+              <div className={`grid grid-cols-2 ${i < rows.length - 1 ? "border-b border-secondary-foreground/[0.07]" : ""}`}>
+                <div className="p-3.5 text-[13px] text-secondary-foreground/35">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-secondary-foreground/20 mr-2 align-middle" />{r[0]}
                 </div>
-                <div className="p-3.5 px-4 text-[13px] text-gold">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold mr-2 align-middle" />
-                  {item.good}
+                <div className="p-3.5 text-[13px] text-primary">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mr-2 align-middle" />{r[1]}
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
+            </RevealItem>
+          ))}
+        </SectionReveal>
       </div>
     </section>
   )
