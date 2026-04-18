@@ -31,7 +31,7 @@ export function CTAFinal() {
         </SectionReveal>
         <SectionReveal>
           <RevealItem>
-            <div className="bg-secondary-foreground/[0.04] border border-secondary-foreground/10 p-8">
+            <div className="bg-secondary-foreground/[0.07] border border-secondary-foreground/20 p-8">
               <div className="text-[10px] tracking-[0.18em] uppercase text-primary mb-5">Formulario de contacto</div>
               <ContactForm />
             </div>

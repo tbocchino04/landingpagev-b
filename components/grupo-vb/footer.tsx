@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="bg-[#080808] py-10 px-[5%] flex justify-between items-center flex-wrap gap-4 border-t border-secondary-foreground/[0.06]">
+    <footer className="bg-ink py-10 px-[5%] flex justify-between items-center flex-wrap gap-4 border-t border-secondary-foreground/[0.06]">
       <div className="flex min-h-10 items-center justify-center">
         <Image
           src="/logo-vb-clean.png"
@@ -14,7 +14,7 @@ export function Footer() {
           className="block h-9 w-auto object-contain translate-y-[1px]"
         />
       </div>
-      <div className="text-xs text-secondary-foreground/30 leading-[1.8]">
+      <div className="text-xs text-secondary-foreground/50 leading-[1.8]">
         Instalaciones eléctricas · CABA y Zona Norte GBA<br />Buenos Aires, Argentina
       </div>
     </footer>

@@ -47,8 +47,8 @@ export function Servicios() {
       </SectionReveal>
       <RevealGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-secondary-foreground/[0.08]">
         {services.map((s, i) => (
-          <GridItem key={i} className="p-10 px-8 border-r border-b border-secondary-foreground/[0.08]">
-            <div className="w-[46px] h-[46px] border border-primary/40 flex items-center justify-center mb-5">
+          <GridItem key={i} className="p-10 px-8 border-r border-b border-secondary-foreground/[0.08] hover:bg-secondary-foreground/[0.04] transition-colors">
+            <div className="w-[46px] h-[46px] border border-primary/40 hover:border-primary/70 flex items-center justify-center mb-5 transition-colors">
               <svg className="w-5 h-5 stroke-primary fill-none" strokeWidth="1.5" viewBox="0 0 24 24">{s.icon}</svg>
             </div>
             <h3 className="font-serif text-[19px] text-secondary-foreground mb-2.5 font-semibold">{s.title}</h3>

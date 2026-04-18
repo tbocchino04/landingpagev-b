@@ -109,12 +109,29 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground font-semibold text-sm px-8 py-4 border-none cursor-pointer tracking-[0.06em] uppercase;
+    @apply bg-primary text-primary-foreground font-semibold text-sm px-8 py-4 border-none cursor-pointer tracking-[0.06em] uppercase transition-colors;
     font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .btn-primary:hover {
+    @apply bg-gold-light;
+  }
+  .btn-primary:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
   }
 
   .btn-ghost {
-    @apply bg-transparent text-secondary-foreground text-sm font-medium px-6 py-4 cursor-pointer tracking-[0.04em];
+    @apply bg-transparent text-secondary-foreground text-sm font-medium px-6 py-4 cursor-pointer tracking-[0.04em] transition-colors;
     border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .btn-ghost:hover {
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+  .btn-ghost:focus-visible {
+    @apply outline-none ring-2 ring-white/40 ring-offset-2;
+  }
+
+  .input-field {
+    @apply w-full bg-secondary-foreground/[0.08] border border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/35 px-3.5 py-3 text-sm transition-colors;
+    @apply focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary;
   }
 }

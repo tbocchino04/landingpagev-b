@@ -15,6 +15,7 @@ type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>
 export function ContactForm() {
   const [values, setValues] = useState({ nombre: "", contacto: "", proyecto: "" })
   const [errors, setErrors] = useState<Errors>({})
+  const [sending, setSending] = useState(false)
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -29,49 +30,59 @@ export function ContactForm() {
       return
     }
     setErrors({})
+    setSending(true)
     const msg = `Hola, soy ${result.data.nombre}.\nContacto: ${result.data.contacto}\n\nProyecto:\n${result.data.proyecto}`
-    window.open(buildWhatsAppUrl(msg), "_blank", "noopener,noreferrer")
+    setTimeout(() => {
+      window.open(buildWhatsAppUrl(msg), "_blank", "noopener,noreferrer")
+      setSending(false)
+    }, 1200)
   }
-
-  const inputCls =
-    "w-full bg-secondary-foreground/5 border border-secondary-foreground/10 text-secondary-foreground placeholder:text-secondary-foreground/30 px-3.5 py-3 text-sm focus:outline-none focus:border-primary transition-colors"
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3" noValidate>
       <div>
+        <label htmlFor="cf-nombre" className="sr-only">Nombre</label>
         <input
+          id="cf-nombre"
           type="text"
           placeholder="Nombre"
           value={values.nombre}
           onChange={(e) => setValues({ ...values, nombre: e.target.value })}
-          className={inputCls}
+          className="input-field"
+          autoComplete="name"
           maxLength={80}
         />
-        {errors.nombre && <p className="text-[11px] text-primary mt-1">{errors.nombre}</p>}
+        {errors.nombre && <p className="text-[11px] text-destructive mt-1">{errors.nombre}</p>}
       </div>
       <div>
+        <label htmlFor="cf-contacto" className="sr-only">Teléfono o email</label>
         <input
+          id="cf-contacto"
           type="text"
           placeholder="Teléfono o email"
           value={values.contacto}
           onChange={(e) => setValues({ ...values, contacto: e.target.value })}
-          className={inputCls}
+          className="input-field"
+          autoComplete="tel"
           maxLength={120}
         />
-        {errors.contacto && <p className="text-[11px] text-primary mt-1">{errors.contacto}</p>}
+        {errors.contacto && <p className="text-[11px] text-destructive mt-1">{errors.contacto}</p>}
       </div>
       <div>
+        <label htmlFor="cf-proyecto" className="sr-only">Descripción del proyecto</label>
         <textarea
+          id="cf-proyecto"
           placeholder="Etapa del proyecto, ubicación y breve descripción"
           value={values.proyecto}
           onChange={(e) => setValues({ ...values, proyecto: e.target.value })}
-          className={`${inputCls} min-h-[110px] resize-y`}
+          className="input-field min-h-[110px] resize-y"
+          autoComplete="off"
           maxLength={600}
         />
-        {errors.proyecto && <p className="text-[11px] text-primary mt-1">{errors.proyecto}</p>}
+        {errors.proyecto && <p className="text-[11px] text-destructive mt-1">{errors.proyecto}</p>}
       </div>
-      <button type="submit" className="btn-primary w-full text-center block py-4">
-        Enviar por WhatsApp
+      <button type="submit" className="btn-primary w-full text-center block py-4" disabled={sending}>
+        {sending ? "Abriendo WhatsApp..." : "Enviar por WhatsApp"}
       </button>
       <p className="text-[11px] text-secondary-foreground/30 text-center pt-1">
         Respondemos en menos de 24hs hábiles · Sin compromiso

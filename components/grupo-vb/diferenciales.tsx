@@ -40,7 +40,7 @@ export function Diferenciales() {
           {rows.map((r, i) => (
             <RevealItem key={i}>
               <div className={`grid grid-cols-2 ${i < rows.length - 1 ? "border-b border-secondary-foreground/[0.07]" : ""}`}>
-                <div className="p-3.5 text-[13px] text-secondary-foreground/35">
+                <div className="p-3.5 text-[13px] text-secondary-foreground/55">
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-secondary-foreground/20 mr-2 align-middle" />{r[0]}
                 </div>
                 <div className="p-3.5 text-[13px] text-primary">

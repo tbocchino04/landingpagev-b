@@ -36,9 +36,9 @@ export function Testimonios() {
           </h2>
         </RevealItem>
       </SectionReveal>
-      <RevealGrid className="grid grid-cols-1 md:grid-cols-3 gap-0.5 mt-12">
+      <RevealGrid className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-12">
         {testimonials.map((t, i) => (
-          <GridItem key={i} className="bg-card p-9 border-l-[3px] border-primary">
+          <GridItem key={i} className="bg-card p-9 border-l-[3px] border-primary hover:shadow-md transition-shadow">
             <Stars />
             <p className="font-serif text-base text-foreground leading-[1.6] italic mb-6">"{t.quote}"</p>
             <div className="flex items-center gap-3">

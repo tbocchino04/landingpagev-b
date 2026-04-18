@@ -6,7 +6,7 @@ export function WhatsAppFloat() {
   return (
     <a
       aria-label="Escribir por WhatsApp"
-      className="fixed bottom-6 right-6 z-[200] bg-[#25D366] w-[54px] h-[54px] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] cursor-pointer"
+      className="fixed bottom-6 right-6 z-[200] bg-[#25D366] w-[54px] h-[54px] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] cursor-pointer hover:scale-110 hover:brightness-110 transition-transform duration-200"
       href={buildWhatsAppUrl("Hola, vi la web de VB Soluciones Eléctricas y quería hacer una consulta.")}
       target="_blank"
       rel="noopener noreferrer"

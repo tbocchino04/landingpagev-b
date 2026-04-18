@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { scrollToContactForm } from "@/lib/contact"
 
 export function Navbar() {
   return (
@@ -14,7 +15,7 @@ export function Navbar() {
           className="block h-8 w-auto object-contain translate-y-[1px]"
         />
       </div>
-      <button className="btn-primary text-[13px] px-[18px] py-2 flex-shrink-0">Solicitar presupuesto</button>
+      <button onClick={scrollToContactForm} className="btn-primary text-[13px] px-[18px] py-2 flex-shrink-0">Solicitar presupuesto</button>
     </nav>
   )
 }
